@@ -14,7 +14,8 @@ const timerEl = $('#timer');
 
 // toca música automaticamente ao abrir a página
 window.addEventListener('load', () => {
-  music.play().catch(()=>{}); // evita erros de autoplay bloqueado
+  music.muted = false; // tira o mudo assim que carrega
+  music.play().catch(()=>{}); // tenta reproduzir
 });
 
 // abrir carta com chuva de corações
