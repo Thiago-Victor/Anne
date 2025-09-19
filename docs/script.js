@@ -14,8 +14,8 @@ const timerEl = $('#timer');
 
 // toca música automaticamente ao abrir a página
 window.addEventListener('load', () => {
-  music.muted = false; // tira o mudo assim que carrega
-  music.play().catch(()=>{}); // tenta reproduzir
+  music.muted = false; // desmuta o áudio
+  music.play().catch(()=>{}); // tenta tocar sem bloquear
 });
 
 // abrir carta com chuva de corações
@@ -143,7 +143,6 @@ document.addEventListener('keydown', e=>{
 });
 
 // contador do tempo juntos
-// coloque a data de início do relacionamento aqui:
 const startDate = new Date('2025-07-20T00:00:00');
 
 function updateTimer(){
@@ -164,4 +163,4 @@ function updateTimer(){
 }
 
 setInterval(updateTimer, 1000);
-updateTimer(); // atualiza imediatamente ao carregar
+updateTimer();

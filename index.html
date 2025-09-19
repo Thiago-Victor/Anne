@@ -117,13 +117,15 @@
         <blockquote>"Amar não é olhar um para o outro, é olhar juntos na mesma direção."</blockquote>
         <blockquote>"Você é a razão do meu melhor sorriso."</blockquote>
         <blockquote>"Com você, até os dias comuns se tornam especiais."</blockquote>
+        <blockquote>"Cada momento com você é inesquecível."</blockquote>
       </div>
     </section>
 
     <section class="card footer-card">
       <div class="footer-grid">
         <div class="share">
-          <h3>Te amo minha nenem S2</h3>
+          <h3>Compartilhar</h3>
+          <p>Link para enviar: <input class="share-link" readonly value="https://seu-site-aqui.example/"/></p>
         </div>
       </div>
     </section>
@@ -134,10 +136,25 @@
     <img src="" alt="Foto ampliada">
   </div>
 
-<audio id="bg-music" autoplay loop muted src="docs/audio/WhatsApp Audio 2025-09-19 at 10.51.31.wav" preload="auto"></audio>
+  <!-- Música de fundo -->
+  <audio id="bg-music" autoplay loop src="docs/audio/WhatsApp Audio 2025-09-19 at 10.51.31.wav" preload="auto"></audio>
 
   <canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
 
   <script src="docs/script.js"></script>
+  <script>
+    // Tocar música automaticamente
+    document.addEventListener("DOMContentLoaded", () => {
+      const music = document.getElementById("bg-music");
+      music.play().catch(() => {
+        // Caso autoplay bloqueie, tocar ao clicar em qualquer lugar
+        const resume = () => {
+          music.play();
+          document.removeEventListener("click", resume);
+        };
+        document.addEventListener("click", resume);
+      });
+    });
+  </script>
 </body>
 </html>
